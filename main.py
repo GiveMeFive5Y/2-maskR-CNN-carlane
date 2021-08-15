@@ -1,3 +1,4 @@
+#模型训练主函数
 import os
 import sys
 import random
@@ -17,9 +18,9 @@ from mrcnn.model import log
 import mcoco.coco as coco
 
 ROOT_DIR = os.path.abspath(
-    "/media/workstation/68bf06e9-e6f8-4333-ae81-6bf0b33b7742/workstation/anaconda3/A-code/2-maskR-CNN-carlane")
+    "/media/workstation/68bf06e9-e6f8-4333-ae81-6bf0b33b7742/workstation/anaconda3/A-code/2-maskR-CNN-carlane") #需要切换为自己的工作路径
 
-MODEL_PATH = os.path.join(ROOT_DIR, "model")
+MODEL_PATH = os.path.join(ROOT_DIR, "model") 
 
 COCO_MODEL_PATH = os.path.join(MODEL_PATH, "mask_rcnn_drivable_res101.h5")
 
@@ -34,7 +35,7 @@ class ShapeConfig(Config):
     GPU_COUNT = 1
     IMAGES_PER_GPU = 1
 
-    NUM_CLASSES = 1 + 1  # background + drivable
+    NUM_CLASSES = 1 + 1  # background + drivable的类别总数
 
     IMAGES_MAX_DIM = 1024
     IMAGES_MIX_DIM = 800
